@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplication-guiz-app</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- class for styling , id for js -->
-    <section id="main">
-        <form  class="form" id="form">
-            <h4 class="score" id="score">score : 0</h4>
-            <h1 id="question">what is 1 multiplied by 1 ?</h1>
-            <input type="text" class="input" id="input" placeholder="Enter your Answer" autofocus autocomplete="off">
-            <button type="submit" class="btn">Submit</button>
-        </form>
-    </section>
-    <script src="js/main.js"></script>  
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multiplication-guiz-app</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- class for styling , id for js -->
+        <section id="main">
+            <form class="form" id="form">
+                <h1>Real-time character counter</h1>
+                <textarea
+                    class="textarea"
+                    id="textarea"
+                    class="textarea"
+                    placeholder="please write your text"
+                    maxlength="50"
+                ></textarea>
+                <div class="counter-container">
+                    <p>
+                        Total Characters :
+                        <span class="total-counter" id="total-counter"></span>
+                    </p>
+                    <p>
+                        Remaining :
+                        <span
+                            class="remaining-counter"
+                            id="remaining-counter"
+                        ></span>
+                    </p>
+                </div>
+            </form>
+        </section>
+        <script src="js/main.js"></script>
+    </body>
 </html>
