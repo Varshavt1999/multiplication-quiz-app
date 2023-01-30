@@ -1,35 +1,14 @@
-const num1 = Math.ceil(Math.random() * 10);
-const num2 = Math.ceil(Math.random() * 10);
-// parse ---> to convert string to number
-let score = JSON.parse(localStorage.getItem("score"));
+const textareaEl = document.getElementById("textarea");
+const totalCounterEl = document.getElementById("total-counter");
+const remainingCounterEl = document.getElementById("remaining-counter");
 
-//while you open a new browser
-if (!score) {
-    score = 0;
-}
-
-const formEl = document.getElementById("form");
-const questionEl = document.getElementById("question");
-const inputEl = document.getElementById("input");
-const scoreEl = document.getElementById("score");
-
-const correctAns = num1 * num2;
-
-questionEl.innerText = `what is ${num1} multiplied by  ${num2} ?`;
-
-function updateLocalStorage() {
-    localStorage.setItem("score", JSON.stringify(score));
-}
-
-formEl.addEventListener("submit", () => {
-    // +inputEl.value --> to convert inputEl.value(string) to number
-    const userAns = +inputEl.value;
-    if (userAns === correctAns) {
-        score++;
-        updateLocalStorage();
-    } else {
-        score--;
-        updateLocalStorage();
-    }
+textareaEl.addEventListener("keyup", () => {
+    updateCounter();
 });
-scoreEl.innerText = `score : ${score}`;
+
+const updateCounter = () => {
+    totalCounterEl.innerText = textareaEl.value.length;
+    remainingCounterEl.innerText =
+        textareaEl.getAttribute("maxlength") - textareaEl.value.length;
+};
+updateCounter();
